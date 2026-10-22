@@ -39,5 +39,7 @@ class ClaimCreate(BaseModel):
 
 
 class ClaimResponse(ClaimCreate):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     status: Literal["submitted"] = "submitted"
